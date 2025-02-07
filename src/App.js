@@ -1,30 +1,58 @@
-import './App.css';
+import './App.css'
+import { Card } from './Components/Card'
 
-function App() {
-  const City={
-    name:"Одесса",
-    description:"Город был основан в 1794 году и с тех пор стал важным портом и культурным центром региона. Одесса также известна своим юмором, теплым климатом и уютными двориками.",
-    img:"odessa.jpg"
-  }
-
-  const Recipe = {
-    name: "Борщ",
-    description:
-      "Борщ — это традиционное украинское блюдо, приготовленное на основе свеклы. Оно включает множество ингредиентов, таких как капуста, картофель, морковь, лук, свекла и мясо. Борщ подаётся с ложкой сметаны и свежей зеленью.",
-    image: "borsh.jpg",
-  };
-
-  return (
-    <div>
-      <h1>{City.name}</h1>
-      <p>{City.description}</p>
-      <img src={City.img}></img> 
-
-      <h1>{Recipe.name}</h1>
-      <p>{Recipe.description}</p>
-      <img src={Recipe.image}></img>
-    </div>
-  );
+const card1 = {
+    title: 'Standard',
+    bColor: '#0068db',
+    price: '$5.99',
+    list: [
+        { sticker: '✔', text: 'sample text' },
+        { sticker: '✔', text: 'sample text' },
+        { sticker: '✔', text: 'sample text' },
+        { sticker: '❌', text: 'sample text' },
+    ],
 }
 
-export default App;
+const card2 = {
+    title: 'Classic',
+    bColor: '#027d57',
+    price: '$2.99',
+    list: [
+        { sticker: '✔', text: 'sample text' },
+        { sticker: '❌', text: 'sample text' },
+        { sticker: '❌', text: 'sample text' },
+        { sticker: '❌', text: 'sample text' },
+    ],
+}
+
+const card3 = {
+    title: 'Premium',
+    bColor: '#02356c',
+    price: '$10.99',
+    list: [
+        { sticker: '✔', text: 'sample text' },
+        { sticker: '✔', text: 'sample text' },
+        { sticker: '✔', text: 'sample text' },
+        { sticker: '✔', text: 'sample text' },
+    ],
+}
+
+function App() {
+    const styleDiv = {
+        margin: '0 auto',
+        width: "1400px",
+        marginTop: '100px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        padding: '20px',
+    }
+    return (
+        <div style={styleDiv}>
+            <Card data={card2} />
+            <Card data={card1} />
+            <Card data={card3} />
+        </div>
+    )
+}
+
+export default App
